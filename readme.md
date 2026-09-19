@@ -28,13 +28,16 @@ Update contact email and phone in `index.html` with your real business details.
 
 ## GitHub Pages
 
-This repo is set up for **GitHub Pages** via the [Deploy to GitHub Pages](.github/workflows/pages.yml) workflow. After the site is on the `main` branch:
+The site is static HTML at the repo root. A [GitHub Actions workflow](.github/workflows/pages.yml) copies `index.html`, `styles.css`, `script.js`, and `.nojekyll` to the **`gh-pages`** branch on every push to **`main`**.
 
-1. In the repo on GitHub, open **Settings → Pages** and set **Source** to **GitHub Actions** (if it is not already).
-2. Merge the website branch into `main`, or push these files to `main`. Each push to `main` redeploys the site.
+### One-time setup (required)
 
-Live URL (after the first successful deploy):
+1. Open **[Repository Settings → Pages](https://github.com/abhishekujjain/ishanityxsolutions-webpage/settings/pages)**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Choose branch **`gh-pages`**, folder **`/ (root)`**, then **Save**.
+
+After the workflow runs and Pages is enabled, the site is available at:
 
 **https://abhishekujjain.github.io/ishanityxsolutions-webpage/**
 
-The `.nojekyll` file ensures static assets are served as-is without Jekyll processing.
+Each push to `main` updates `gh-pages` automatically (allow 1–2 minutes for GitHub to refresh).
